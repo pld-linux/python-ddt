@@ -1,0 +1,14 @@
+--- ddt-1.2.1/test/test_functional.py.orig	2019-02-24 08:10:28.000000000 +0100
++++ ddt-1.2.1/test/test_functional.py	2019-03-22 17:23:41.137209956 +0100
+@@ -2,7 +2,10 @@
+ import json
+ 
+ import six
+-import mock
++try:
++    import mock
++except ImportError:
++    from unittest import mock
+ 
+ from ddt import ddt, data, file_data
+ from nose.tools import (

@@ -8,7 +8,7 @@ Summary:	Data-Driven Tests - library to multiply test cases
 Summary(pl.UTF-8):	Data-Driven Tests - biblioteka do zwielokrotniania przypadków testowych
 Name:		python-ddt
 Version:	1.2.1
-Release:	4
+Release:	5
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/ddt/

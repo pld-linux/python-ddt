@@ -7,26 +7,28 @@
 Summary:	Data-Driven Tests - library to multiply test cases
 Summary(pl.UTF-8):	Data-Driven Tests - biblioteka do zwielokrotniania przypadków testowych
 Name:		python-ddt
-Version:	1.2.1
-Release:	7
+Version:	1.4.4
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/ddt/
 Source0:	https://files.pythonhosted.org/packages/source/d/ddt/ddt-%{version}.tar.gz
-# Source0-md5:	1270d706454088ea108f23fbaa800e56
-Patch0:		%{name}-mock.patch
+# Source0-md5:	6ce9b363798079b7d437a97ef09adb0f
 URL:		https://github.com/txels/ddt
-BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
-BuildRequires:	python-mock
+BuildRequires:	python-enum34
 BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
+%if %{with tests}
+BuildRequires:	python-mock
+%endif
 %endif
 %if %{with python3}
-BuildRequires:	python3-modules >= 1:3.3
+BuildRequires:	python3-modules >= 1:3.5
 BuildRequires:	python3-setuptools
 %endif
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.714
 Requires:	python-modules >= 1:2.7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -46,7 +48,7 @@ testowych.
 Summary:	Data-Driven Tests - library to multiply test cases
 Summary(pl.UTF-8):	Data-Driven Tests - biblioteka do zwielokrotniania przypadków testowych
 Group:		Libraries/Python
-Requires:	python3-modules >= 1:3.3
+Requires:	python3-modules >= 1:3.5
 
 %description -n python3-ddt
 DDT (Data-Driven Tests) allows you to multiply one test case by
@@ -61,7 +63,6 @@ testowych.
 
 %prep
 %setup -q -n ddt-%{version}
-%patch0 -p1
 
 %build
 %if %{with python2}

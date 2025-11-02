@@ -2,14 +2,14 @@
 # Conditional build:
 %bcond_without	tests	# unit tests
 %bcond_without	python2 # CPython 2.x module
-%bcond_without	python3 # CPython 3.x module
+%bcond_with	python3 # CPython 3.x module (built from python3-ddt.spec)
 
 Summary:	Data-Driven Tests - library to multiply test cases
 Summary(pl.UTF-8):	Data-Driven Tests - biblioteka do zwielokrotniania przypadków testowych
 Name:		python-ddt
 # keep 1.6.x here for python2 support
 Version:	1.6.0
-Release:	3
+Release:	4
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/ddt/
